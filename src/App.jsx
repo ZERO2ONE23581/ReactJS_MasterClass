@@ -4,21 +4,22 @@ const Father = styled.div`
   display: flex;
 `;
 
-const Btn = styled.button`
-  border: none;
-  border-radius: 15px;
-  padding: 20px 50px;
+const Input = styled.input.attrs({
+  required: true,
+  placeholder: "hello world!",
+  maxLength: 10,
+})`
   background-color: tomato;
   color: white;
-  font-size: 30px;
+  margin: 5px;
 `;
 
 function App() {
   return (
     <Father as="header">
-      <Btn as="a" href="/">
-        Click
-      </Btn>
+      <Input />
+      <Input />
+      <Input />
     </Father>
   );
 }

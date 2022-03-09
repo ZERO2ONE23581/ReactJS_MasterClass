@@ -17,6 +17,14 @@ const rotateAnimation = keyframes`
   }
 `;
 
+const Emoji = styled.span`
+  font-size: 36px;
+  &:nth-child(2) {
+    margin: 100px;
+    animation: ${rotateAnimation} 2s ease-in-out infinite;
+  }
+`;
+
 const Box = styled.div`
   height: 200px;
   width: 200px;
@@ -28,11 +36,9 @@ const Box = styled.div`
   &:hover {
     background-color: blue;
   }
-  span {
-    font-size: 4rem;
-    &:hover {
-      font-size: 8rem;
-    }
+  ${Emoji}:hover {
+    font-size: 8rem;
+
     &:active {
       opacity: 0;
     }
@@ -43,8 +49,9 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <span>😄</span>
+        <Emoji>😄</Emoji>
       </Box>
+      <Emoji>🍎</Emoji>
     </Wrapper>
   );
 }

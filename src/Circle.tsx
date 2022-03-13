@@ -2,6 +2,7 @@
 //in CSS borderColor is required.
 //in CircleProps borderColor is optional.
 
+import { useState } from "react";
 import styled from "styled-components";
 
 interface ContainerProps {
@@ -30,7 +31,11 @@ interface CircleProps {
 }
 
 function Circle({ bgColor, borderColor, text = "default text!" }: CircleProps) {
-  //??으로 디폴트값을 준다. (borderColor가 undefined일때는 bgColor와 같다.)
+  const [value, setValue] = useState<number | string>(1); //value can be either number of string
+  // setValue(1);
+  // setValue("hello");
+  // setValue(true);
+
   return (
     <Container bgColor={bgColor} borderColor={borderColor ?? bgColor}>
       {text}
